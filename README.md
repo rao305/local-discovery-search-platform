@@ -6,7 +6,6 @@ A small local-search product. You ask a normal question like *"upscale italian n
 
 It will **not invent** a restaurant, a rating, or “open now.” If nothing real matches, it returns empty and says so.
 
-Built step-by-step with [KhwajaLabs Build](https://khwajalabs.com).
 
 ## What I built
 
@@ -45,34 +44,6 @@ question → PARSE → GROUND → RANK+REASON → React UI
 
 More detail: see [ARCHITECTURE.md](ARCHITECTURE.md).
 
-## How to run
-
-### Backend
-
-```bash
-cd "Local Discovery System"
-pip install -r requirements.txt
-uvicorn src.recommend:app --reload --port 8000
-```
-
-Try: [http://127.0.0.1:8000/recommend?q=upscale%20italian%20near%20river%20north&lat=41.892&lng=-87.634](http://127.0.0.1:8000/recommend?q=upscale%20italian%20near%20river%20north&lat=41.892&lng=-87.634)
-
-### Frontend
-
-```bash
-cd web
-npm install
-npm run dev
-```
-
-Open the Vite URL (usually http://127.0.0.1:5173). It proxies API calls to port 8000.
-
-### Tests + measured results
-
-```bash
-pytest
-python -m src.evals
-```
 
 ## Measured results
 
@@ -99,4 +70,4 @@ Re-run anytime with `python -m src.evals`. A prompt change should **not ship** i
 - Python + FastAPI
 - TypeScript + React (Vite)
 - OpenTelemetry API/SDK (console-friendly setup)
-- Optional OpenAI for parse/rank
+- OpenAI for parse/rank
